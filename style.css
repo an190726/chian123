@@ -1,29 +1,51 @@
 /* ==================================== */
-/* Định dạng cho H1 */
+/* Định dạng cho H1 (Giữ nguyên) */
 /* ==================================== */
 h1 {
-    color: red; /* Màu chữ đỏ */
-    text-align: center; /* Căn giữa */
+    color: red; 
+    text-align: center; 
 }
 
 /* ==================================== */
-/* Định dạng cho đoạn P thứ nhất */
+/* Định dạng mới áp dụng cho TẤT CẢ các đoạn P */
 /* ==================================== */
-p:first-of-type {
-    color: yellow; /* Màu chữ vàng */
-    font-size: 13px; /* Cỡ chữ 13 pixels */
-    font-family: Arial, sans-serif; /* Font Arial */
-}
-
-/* ==================================== */
-/* Định dạng cho đoạn P thứ hai */
-/* ==================================== */
-p:last-of-type {
-    background-color: yellow; /* Màu nền vàng */
-    font-weight: bold; /* In đậm */
-    font-size: 13px; /* Cỡ chữ 13 pixels */
-    font-family: "Times New Roman", serif; /* Font Times New Roman */
+p {
+    color: black; 
+    /* Yêu cầu: màu nền vàng */
+    background-color: yellow; 
+    /* Yêu cầu: căn giữa */
+    text-align: center; 
+    /* Yêu cầu: font Times New Roman, Arial */
+    font-family: "Times New Roman", Arial, sans-serif; 
+    /* Yêu cầu: cỡ chữ 13 pixels */
+    font-size: 13px; 
+    /* Yêu cầu: in đậm */
+    font-weight: bold; 
     
-    /* Thêm padding để màu nền bao quanh chữ đẹp hơn */
-    padding: 5px; 
+    /* Thêm padding và margin cho đẹp hơn */
+    padding: 8px; 
+    margin: 10px 0;
 }
+/*
+p:first-of-type {
+    color: black;
+    background-color: yellow;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+p:last-of-type {
+    color: black;
+    background-color: yellow;
+    text-align: center;
+    font-family: "Times New Roman", serif;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 8px;
+    margin: 10px 0;
+}
+*/
