@@ -3,20 +3,20 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
-    background-color: white; 
+    /* Có thể thêm background-color: white; ở đây nếu bạn muốn toàn bộ trang là nền trắng */
 }
 
 /* ------------------------------------------- */
-/* 1. Vùng 1: Viền ĐỎ, Nền XANH DƯƠNG, Chữ HỒNG NHẠT */
+/* 1. Vùng 1: Viền ĐỎ, Nền TRẮNG (WHITE) */
 /* ------------------------------------------- */
 #vung1 {
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
+    display: flex; /* Bật Flexbox */
+    flex-direction: column; /* Sắp xếp dọc: Thanh điều hướng trên, ảnh dưới */
+    align-items: center; /* Căn giữa theo chiều ngang */
     
-    background-color: #007bff; /* Nền XANH DƯƠNG */
-    color: #ffb6c1; /* Chữ HỒNG NHẠT (lightpink) */
-    border: 20px solid red; /* Viền ĐỎ */
+    background-color: white; /* ĐÃ CHỈNH: Nền màu TRẮNG */
+    color: black; /* ĐÃ CHỈNH: Chữ màu ĐEN để dễ nhìn trên nền trắng */
+    border: 20px solid red; /* Viền màu ĐỎ */
     
     padding: 15px;
     margin-bottom: 10px;
@@ -24,57 +24,40 @@ body {
 }
 
 /* ------------------------------------------- */
-/* 2. Vùng 2: Viền ĐEN, Nền XANH LÁ (green) */
+/* 2. Vùng 2: Nền xanh lá, chữ vàng, viền hồng (70px) */
 /* ------------------------------------------- */
 #vung2 {
-    background-color: green; /* Nền XANH LÁ */
-    color: yellow; /* Giữ màu vàng cho chữ để dễ đọc */ 
-    border: 70px solid black; /* Viền ĐEN */
+    background-color: green; 
+    color: yellow; 
+    border: 70px solid pink; 
     
     padding: 15px;
     margin-bottom: 10px;
     box-sizing: border-box;
-
-    /* Đảm bảo căn giữa cho ảnh và chữ */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
-    height: 70px; /* Giữ chiều cao 70px */
 }
 
 /* ------------------------------------------- */
-/* 3. Vùng 3: Viền ĐEN, Nền TÍM NHẠT (#d1c4e9) */
+/* 3. Vùng 3: Nền tím nhạt, chữ cam đậm, viền đen (20px) */
 /* ------------------------------------------- */
 #vung3 {
-    background-color: #d1c4e9; /* Nền TÍM NHẠT */
+    background-color: #d1c4e9; 
     color: darkorange; 
-    border: 20px solid black; /* Viền ĐEN */
+    border: 20px solid black; 
     
     padding: 15px;
     box-sizing: border-box;
-
-    /* Đảm bảo căn giữa cho chữ */
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    height: 20px; /* Giữ chiều cao 20px */
 }
 
-/* Quy tắc BẮT BUỘC cho ảnh 48x48px */
-.vung-image {
-    width: 48px; 
-    height: 48px;
-    object-fit: cover; 
-    border: 1px solid #333; 
-    border-radius: 8px; 
-    margin-top: 5px; 
+/* Quy tắc BẮT BUỘC để ảnh co dãn linh hoạt (responsive) */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 10px; /* Tạo khoảng cách giữa điều hướng và ảnh */
 }
 
-/* Đảm bảo nội dung chữ cũng được căn giữa */
-#vung1 p, #vung2 p, #vung3 p {
+/* Đảm bảo nội dung chữ của thanh điều hướng cũng được căn giữa */
+#vung1 p {
      text-align: center;
      width: 100%;
-      margin: 0; 
 }
-
