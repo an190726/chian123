@@ -3,54 +3,77 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
+    background-color: white; /* Giữ nền trang web là màu trắng */
 }
 
-/* Vùng 1: Nền trắng, chữ đen, viền đỏ (20px) - Đã chỉnh sửa */
+/* ------------------------------------------- */
+/* 1. Vùng 1: Viền ĐỎ, Nền TRẮNG (WHITE) */
+/* ------------------------------------------- */
 #vung1 {
     display: flex;
     flex-direction: column; 
     align-items: center; 
     
-    background-color: White; 
-    color: black; /* Đã chỉnh màu chữ để hiển thị rõ trên nền trắng */
-    border: 20px solid red; 
+    background-color: white; /* Nền TRẮNG */
+    color: black; /* Chữ Đen để nổi bật trên nền trắng */
+    border: 20px solid red; /* Viền ĐỎ */
     
     padding: 15px;
     margin-bottom: 10px;
     box-sizing: border-box; 
 }
 
-/* Vùng 2: Nền xanh lá, chữ vàng, viền hồng (70px) */
+/* ------------------------------------------- */
+/* 2. Vùng 2: Viền HỒNG (pink), Nền XANH LÁ (green) */
+/* ------------------------------------------- */
 #vung2 {
-    background-color: green; 
+    background-color: green; /* Nền XANH LÁ */
     color: yellow; 
-    border: 70px solid pink; 
+    border: 70px solid pink; /* Viền HỒNG */
     
     padding: 15px;
     margin-bottom: 10px;
     box-sizing: border-box;
+
+    /* Đảm bảo căn giữa cho ảnh và chữ */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    height: 70px; /* Giữ chiều cao 70px */
 }
 
-/* Vùng 3: Nền tím nhạt, chữ cam đậm, viền đen (20px) */
+/* ------------------------------------------- */
+/* 3. Vùng 3: Viền ĐEN (black), Nền TÍM NHẠT (#d1c4e9) */
+/* ------------------------------------------- */
 #vung3 {
-    background-color: #d1c4e9; 
+    background-color: #d1c4e9; /* Nền TÍM NHẠT */
     color: darkorange; 
-    border: 20px solid black; 
+    border: 20px solid black; /* Viền ĐEN */
     
     padding: 15px;
     box-sizing: border-box;
+
+    /* Đảm bảo căn giữa cho chữ */
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 20px; /* Giữ chiều cao 20px */
 }
 
-/* Quy tắc BẮT BUỘC để ảnh co dãn linh hoạt (responsive) */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-top: 10px; /* Tạo khoảng cách giữa điều hướng và ảnh */
+/* Quy tắc BẮT BUỘC cho ảnh 48x48px */
+.vung-image {
+    width: 48px; 
+    height: 48px;
+    object-fit: cover; 
+    border: 1px solid #333; 
+    border-radius: 8px; 
+    margin-top: 5px; /* Khoảng cách giữa chữ và ảnh trong Vùng 2 */
 }
 
 /* Đảm bảo nội dung chữ của thanh điều hướng cũng được căn giữa */
-#vung1 p {
+#vung1 p, #vung2 p, #vung3 p {
      text-align: center;
      width: 100%;
+      margin: 0; /* Loại bỏ margin mặc định của thẻ <p> */
 }
