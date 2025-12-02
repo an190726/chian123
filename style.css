@@ -3,19 +3,19 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
-    background-color: white; /* Giữ nền trang web là màu trắng */
+    background-color: white; 
 }
 
 /* ------------------------------------------- */
-/* 1. Vùng 1: Viền ĐỎ, Nền TRẮNG (WHITE) */
+/* 1. Vùng 1: Viền ĐỎ, Nền XANH DƯƠNG, Chữ HỒNG NHẠT */
 /* ------------------------------------------- */
 #vung1 {
     display: flex;
     flex-direction: column; 
     align-items: center; 
     
-    background-color: white; /* Nền TRẮNG */
-    color: black; /* Chữ Đen để nổi bật trên nền trắng */
+    background-color: #007bff; /* Nền XANH DƯƠNG */
+    color: #ffb6c1; /* Chữ HỒNG NHẠT (lightpink) */
     border: 20px solid red; /* Viền ĐỎ */
     
     padding: 15px;
@@ -24,27 +24,27 @@ body {
 }
 
 /* ------------------------------------------- */
-/* 2. Vùng 2: Viền HỒNG (pink), Nền XANH LÁ (green) */
+/* 2. Vùng 2: Viền ĐEN, Nền XANH LÁ (green) */
 /* ------------------------------------------- */
 #vung2 {
     background-color: green; /* Nền XANH LÁ */
-    color: yellow; 
-    border: 70px solid pink; /* Viền HỒNG */
+    color: yellow; /* Giữ màu vàng cho chữ để dễ đọc */ 
+    border: 70px solid black; /* Viền ĐEN */
     
     padding: 15px;
     margin-bottom: 10px;
     box-sizing: border-box;
 
-    /* Đảm bảo căn giữa cho ảnh và chữ */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
-    height: 70px; /* Giữ chiều cao 70px */
+    /* Đảm bảo căn giữa cho ảnh và chữ */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    height: 70px; /* Giữ chiều cao 70px */
 }
 
 /* ------------------------------------------- */
-/* 3. Vùng 3: Viền ĐEN (black), Nền TÍM NHẠT (#d1c4e9) */
+/* 3. Vùng 3: Viền ĐEN, Nền TÍM NHẠT (#d1c4e9) */
 /* ------------------------------------------- */
 #vung3 {
     background-color: #d1c4e9; /* Nền TÍM NHẠT */
@@ -54,11 +54,11 @@ body {
     padding: 15px;
     box-sizing: border-box;
 
-    /* Đảm bảo căn giữa cho chữ */
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    height: 20px; /* Giữ chiều cao 20px */
+    /* Đảm bảo căn giữa cho chữ */
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 20px; /* Giữ chiều cao 20px */
 }
 
 /* Quy tắc BẮT BUỘC cho ảnh 48x48px */
@@ -68,12 +68,13 @@ body {
     object-fit: cover; 
     border: 1px solid #333; 
     border-radius: 8px; 
-    margin-top: 5px; /* Khoảng cách giữa chữ và ảnh trong Vùng 2 */
+    margin-top: 5px; 
 }
 
-/* Đảm bảo nội dung chữ của thanh điều hướng cũng được căn giữa */
+/* Đảm bảo nội dung chữ cũng được căn giữa */
 #vung1 p, #vung2 p, #vung3 p {
      text-align: center;
      width: 100%;
-      margin: 0; /* Loại bỏ margin mặc định của thẻ <p> */
+      margin: 0; 
 }
+
