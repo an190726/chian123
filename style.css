@@ -1,22 +1,27 @@
-/* style.css (hoặc style (2).css) */
+/* style.css (hoặc style (2).css) - MÃ ĐÃ CHỈNH SỬA VÀ HOÀN THIỆN */
 
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
-    /* Có thể thêm background-color: white; ở đây nếu bạn muốn toàn bộ trang là nền trắng */
+    background-color: white; /* Thêm nền trắng cho body, như bạn đã yêu cầu trước đó */
 }
 
 /* ------------------------------------------- */
-/* 1. Vùng 1: Viền ĐỎ, Nền TRẮNG (WHITE) */
+/* 1. Vùng 1: Viền ĐỎ, Nền TRẮNG (WHITE) | Chiều cao 20px */
 /* ------------------------------------------- */
 #vung1 {
-    display: flex; /* Bật Flexbox */
-    flex-direction: column; /* Sắp xếp dọc: Thanh điều hướng trên, ảnh dưới */
-    align-items: center; /* Căn giữa theo chiều ngang */
+    /* Áp dụng chiều cao 20px từ yêu cầu */
+    height: 20px; 
+    
+    display: flex; 
+    /* Chỉnh lại thành căn giữa dọc (align-items) và ngang (justify-content) cho nội dung chữ */
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center; 
     
-    background-color: white; /* ĐÃ CHỈNH: Nền màu TRẮNG */
-    color: black; /* ĐÃ CHỈNH: Chữ màu ĐEN để dễ nhìn trên nền trắng */
-    border: 20px solid red; /* Viền màu ĐỎ */
+    background-color: white; 
+    color: black; 
+    border: 20px solid red; 
     
     padding: 15px;
     margin-bottom: 10px;
@@ -24,9 +29,18 @@ body {
 }
 
 /* ------------------------------------------- */
-/* 2. Vùng 2: Nền xanh lá, chữ vàng, viền hồng (70px) */
+/* 2. Vùng 2: Nền xanh lá, chữ vàng, viền hồng | Chiều cao 70px */
 /* ------------------------------------------- */
 #vung2 {
+    /* Áp dụng chiều cao 70px từ yêu cầu */
+    height: 70px; 
+    
+    /* Dùng Flexbox để căn giữa chữ và ảnh (48x48px) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+    align-items: center; /* Căn giữa nội dung theo chiều ngang */
+
     background-color: green; 
     color: yellow; 
     border: 70px solid pink; 
@@ -37,9 +51,17 @@ body {
 }
 
 /* ------------------------------------------- */
-/* 3. Vùng 3: Nền tím nhạt, chữ cam đậm, viền đen (20px) */
+/* 3. Vùng 3: Nền tím nhạt, chữ cam đậm, viền đen | Chiều cao 20px */
 /* ------------------------------------------- */
 #vung3 {
+    /* Áp dụng chiều cao 20px từ yêu cầu */
+    height: 20px;
+    
+    /* Dùng Flexbox để căn giữa chữ */
+    display: flex;
+    justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
+
     background-color: #d1c4e9; 
     color: darkorange; 
     border: 20px solid black; 
@@ -48,16 +70,25 @@ body {
     box-sizing: border-box;
 }
 
-/* Quy tắc BẮT BUỘC để ảnh co dãn linh hoạt (responsive) */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-top: 10px; /* Tạo khoảng cách giữa điều hướng và ảnh */
+/* Quy tắc BẮT BUỘC cho ảnh 48x48px (Đã được áp dụng) */
+.vung-image {
+    width: 48px; 
+    height: 48px;
+    object-fit: cover; 
+    border: 1px solid #333; 
+    border-radius: 8px; 
+    margin-top: 5px; /* Khoảng cách giữa chữ và ảnh trong Vùng 2 */
 }
 
-/* Đảm bảo nội dung chữ của thanh điều hướng cũng được căn giữa */
-#vung1 p {
+/* Đảm bảo nội dung chữ của thanh điều hướng cũng được căn giữa (Đã được áp dụng) */
+#vung1 p, #vung2 p p, #vung3 p {
      text-align: center;
      width: 100%;
+      margin: 0; /* Loại bỏ margin mặc định để căn giữa chính xác */
+}
+
+/* Do Vùng 1 và Vùng 3 chỉ cao 20px nên văn bản p có thể bị tràn.
+   Thêm quy tắc để đảm bảo văn bản hiển thị gọn gàng */
+#vung1 p, #vung3 p {
+    font-size: 10px; /* Thu nhỏ font chữ để vừa với chiều cao 20px */
 }
