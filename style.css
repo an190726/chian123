@@ -11,7 +11,7 @@ body {
     flex-direction: column; /* Sắp xếp dọc: Thanh điều hướng trên, ảnh dưới */
     align-items: center; /* Căn giữa theo chiều ngang */
     
-    background-color: blue; 
+    background-color: ; 
     color: yellow; 
     border: 20px solid red; 
     
