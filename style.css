@@ -1,37 +1,49 @@
 div {
-    width: 70%; 
-    margin: 30px auto; 
-    padding: 20px; 
-    border-style: double; 
-    border-width: 8px; 
-    
-    /* THAY ĐỔI TẠI ĐÂY: Căn giữa văn bản và hình ảnh */
-    text-align: center; 
-    
-    font-family: 'Verdana', sans-serif; 
-    border-radius: 10px; 
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+    width: 70%; 
+    margin: 30px auto; 
+    padding: 20px; 
+    border-style: double; 
+    border-width: 8px; 
+    
+    /* THAY ĐỔI TẠI ĐÂY: Căn giữa văn bản và hình ảnh */
+    text-align: center; 
+    
+    font-family: 'Verdana', sans-serif; 
+    border-radius: 10px; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
+/* ------------------------------------------- */
+/* 1. Vùng 1: Viền Xanh Lá Cây, Nền Vàng Nhạt */
+/* ------------------------------------------- */
 #vung1 {
-    border-color: #007bff; 
-    background-color: #f8f9fa; 
+    border-color: #28a745; /* MÀU MỚI: Xanh Lá Cây Đậm */
+    background-color: #fffacd; /* MÀU MỚI: Vàng Nhạt (LemonChiffon) */
+    color: #333; /* Chữ màu xám đậm */
 }
 
+/* ------------------------------------------- */
+/* 2. Vùng 2: Viền Tím Đậm, Nền Xanh Da Trời Nhạt */
+/* ------------------------------------------- */
 #vung2 {
-    border-color: #28a745; 
-    background-color: #f8f9fa; 
+    border-color: #6f42c1; /* MÀU MỚI: Tím Đậm (Lavender) */
+    background-color: #e0ffff; /* MÀU MỚI: Xanh Da Trời Nhạt (LightCyan) */
+    color: #000; /* Chữ màu đen */
 }
 
+/* ------------------------------------------- */
+/* 3. Vùng 3: Viền Cam Cháy, Nền Hồng Nhạt */
+/* ------------------------------------------- */
 #vung3 {
-    border-color: #dc3545; 
-    background-color: #f8f9fa; 
+    border-color: #fd7e14; /* MÀU MỚI: Cam Cháy (Orange) */
+    background-color: #ffe4e1; /* MÀU MỚI: Hồng Nhạt (MistyRose) */
+    color: #8b0000; /* Chữ màu đỏ sậm */
 }
 
 .vung-image {
-    max-width: 90%; 
-    height: auto; 
-    margin-top: 15px; 
-    border: 3px dotted #6c757d; 
-    border-radius: 5px;
+    max-width: 90%; 
+    height: auto; 
+    margin-top: 15px; 
+    border: 3px dotted #6c757d; 
+    border-radius: 5px;
 }
