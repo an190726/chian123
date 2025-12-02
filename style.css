@@ -1,49 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4; /* Nền trang web màu xám nhạt */
+    padding: 20px;
+}
+
+/* Định kiểu chung cho tất cả các vùng */
 div {
-    width: 70%; 
-    margin: 30px auto; 
-    padding: 20px; 
-    border-style: double; 
-    border-width: 8px; 
-    
-    /* THAY ĐỔI TẠI ĐÂY: Căn giữa văn bản và hình ảnh */
-    text-align: center; 
-    
-    font-family: 'Verdana', sans-serif; 
-    border-radius: 10px; 
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+    width: 80%; /* Chiều rộng 80% trang */
+    margin: 15px auto; /* Canh giữa và tạo khoảng cách */
+    padding: 10px;
+    border-style: solid; 
+    border-width: 5px; 
+    box-sizing: border-box; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm đổ bóng nhẹ */
+    border-radius: 5px;
 }
 
 /* ------------------------------------------- */
-/* 1. Vùng 1: Viền Xanh Lá Cây, Nền Vàng Nhạt */
+/* 1. Vùng 1: Chiều cao 20px | Viền ĐỎ, Nền TRẮNG */
 /* ------------------------------------------- */
 #vung1 {
-    border-color: #28a745; /* MÀU MỚI: Xanh Lá Cây Đậm */
-    background-color: #fffacd; /* MÀU MỚI: Vàng Nhạt (LemonChiffon) */
-    color: #333; /* Chữ màu xám đậm */
+    height: 20px;
+    background-color: white; /* Nền TRẮNG */
+    color: darkblue; /* Chữ Xanh đậm */
+    border-color: red; /* Viền ĐỎ */
+    
+    /* Căn giữa chữ */
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 
 /* ------------------------------------------- */
-/* 2. Vùng 2: Viền Tím Đậm, Nền Xanh Da Trời Nhạt */
+/* 2. Vùng 2: Chiều cao 70px | Viền XANH, Nền VÀNG NHẠT (Chứa ảnh) */
 /* ------------------------------------------- */
 #vung2 {
-    border-color: #6f42c1; /* MÀU MỚI: Tím Đậm (Lavender) */
-    background-color: #e0ffff; /* MÀU MỚI: Xanh Da Trời Nhạt (LightCyan) */
-    color: #000; /* Chữ màu đen */
+    height: 70px;
+    background-color: #ffffe0; /* Nền VÀNG NHẠT */
+    color: #333;
+    border-color: #008000; /* Viền XANH LÁ */
+    
+    /* Căn giữa chữ và ảnh */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
 }
 
 /* ------------------------------------------- */
-/* 3. Vùng 3: Viền Cam Cháy, Nền Hồng Nhạt */
+/* 3. Vùng 3: Chiều cao 20px | Viền TÍM, Nền HỒNG NHẠT */
 /* ------------------------------------------- */
 #vung3 {
-    border-color: #fd7e14; /* MÀU MỚI: Cam Cháy (Orange) */
-    background-color: #ffe4e1; /* MÀU MỚI: Hồng Nhạt (MistyRose) */
-    color: #8b0000; /* Chữ màu đỏ sậm */
+    height: 20px;
+    background-color: #ffe4e1; /* Nền HỒNG NHẠT */
+    color: #8b0000;
+    border-color: #800080; /* Viền TÍM */
+    
+    /* Căn giữa chữ */
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 
+/* Quy tắc cho ảnh 48x48px */
 .vung-image {
-    max-width: 90%; 
-    height: auto; 
-    margin-top: 15px; 
-    border: 3px dotted #6c757d; 
-    border-radius: 5px;
+    width: 48px; 
+    height: 48px;
+    object-fit: cover; 
+    display: block;
+    margin-top: 5px; /* Tạo khoảng cách với chữ "Vùng Mê cung nội dung" */
+    border-radius: 50%; /* Làm ảnh thành hình tròn */
+    border: 2px solid #333;
+}
+
+/* Đảm bảo nội dung chữ căn giữa và không bị tràn */
+#vung1 p, #vung2 p, #vung3 p {
+     text-align: center;
+     width: 100%;
+     margin: 0;
+}
+#vung1 p, #vung3 p {
+    font-size: 10px; /* Thu nhỏ font chữ để vừa với chiều cao 20px */
 }
