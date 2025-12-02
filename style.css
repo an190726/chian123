@@ -1,46 +1,30 @@
-div {
-    width: 80%; 
-    margin: 10px auto; 
-    border-style: solid; 
-    border-width: 3px; 
-    text-align: center;
+body {
     font-family: Arial, sans-serif;
-    box-sizing: border-box; 
-    overflow: hidden;
+    margin: 20px;
 }
 
 #vung1 {
-    height: 20px;
-    border-color: blue;
-    background-color: #e3f2fd; 
+    background-color: yellow;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 20px solid white;
+    color: yellow;
 }
 
 #vung2 {
-    height: 70px;
-    border-color: yellow;
-    background-color: #fffde7; 
+    background-color: lightblue; 
+    color: darkblue;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 70px solid black;
+    color: red;
 }
 
 #vung3 {
-    height: 20px;
-    border-color: red;
-    background-color: #ffebee;
+    background-color: lightcoral; 
+    color: #333;
+    padding: 15px;
+    border: 20px solid gray;
+    color:white;
 }
 
-.vung-image {
-    width: 48px; 
-    height: 48px;
-    
-    display: block; 
-    margin: 5px auto 0;
-   
-    object-fit: cover; 
-    
-    border: 1px solid #333; 
-    border-radius: 8px; 
-    transition: transform 0.3s ease;
-}
-
-.vung-image:hover {
-    transform: scale(1.1); 
-}
