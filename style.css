@@ -1,56 +1,56 @@
 /* style.css (hoặc style (2).css) */
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    font-family: Arial, sans-serif;
+    margin: 20px;
 }
 
-/* Vùng 1: Nền xanh dương, chữ vàng, viền đỏ (20px) - Dùng Flexbox để căn giữa */
+/* Vùng 1: Nền trắng, chữ đen, viền đỏ (20px) - Đã chỉnh sửa */
 #vung1 {
-    display: flex; /* Bật Flexbox */
-    flex-direction: column; /* Sắp xếp dọc: Thanh điều hướng trên, ảnh dưới */
-    align-items: center; /* Căn giữa theo chiều ngang */
-    
-    background-color: White; 
-    color: yellow; 
-    border: 20px solid red; 
-    
-    padding: 15px;
-    margin-bottom: 10px;
-    box-sizing: border-box; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    
+    background-color: White; 
+    color: black; /* Đã chỉnh màu chữ để hiển thị rõ trên nền trắng */
+    border: 20px solid red; 
+    
+    padding: 15px;
+    margin-bottom: 10px;
+    box-sizing: border-box; 
 }
 
 /* Vùng 2: Nền xanh lá, chữ vàng, viền hồng (70px) */
 #vung2 {
-    background-color: green; 
-    color: yellow; 
-    border: 70px solid pink; 
-    
-    padding: 15px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
+    background-color: green; 
+    color: yellow; 
+    border: 70px solid pink; 
+    
+    padding: 15px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
 }
 
 /* Vùng 3: Nền tím nhạt, chữ cam đậm, viền đen (20px) */
 #vung3 {
-    background-color: #d1c4e9; 
-    color: darkorange; 
-    border: 20px solid black; 
-    
-    padding: 15px;
-    box-sizing: border-box;
+    background-color: #d1c4e9; 
+    color: darkorange; 
+    border: 20px solid black; 
+    
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 /* Quy tắc BẮT BUỘC để ảnh co dãn linh hoạt (responsive) */
 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-top: 10px; /* Tạo khoảng cách giữa điều hướng và ảnh */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 10px; /* Tạo khoảng cách giữa điều hướng và ảnh */
 }
 
 /* Đảm bảo nội dung chữ của thanh điều hướng cũng được căn giữa */
 #vung1 p {
-     text-align: center;
-     width: 100%;
+     text-align: center;
+     width: 100%;
 }
