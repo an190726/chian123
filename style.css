@@ -1,23 +1,23 @@
+
 div {
-    width: 80%;
-    margin: 10px auto;
-    padding: 5px;
-    border-style: solid;
-    border-width: 3px;
+    width: 80%; 
+    margin: 10px auto; 
+    border-style: solid; 
+    border-width: 3px; 
     text-align: center;
     font-family: Arial, sans-serif;
     box-sizing: border-box; 
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 #vung1 {
     height: 20px;
     border-color: blue;
-    background-color: #e3f2fd;
+    background-color: #e3f2fd; 
 }
 
 #vung2 {
-    height: 70px; 
+    height: 70px;
     border-color: yellow;
     background-color: #fffde7; 
 }
@@ -27,14 +27,21 @@ div {
     border-color: red;
     background-color: #ffebee;
 }
+
 .vung-image {
     width: 48px; 
     height: 48px;
-
+    
     display: block; 
-    margin: 5px auto 0; 
+    margin: 5px auto 0;
+   
     object-fit: cover; 
     
-    border: 1px solid #000; 
-    border-radius: 5px;
+    border: 1px solid #333; 
+    border-radius: 8px; 
+    transition: transform 0.3s ease;
+}
+
+.vung-image:hover {
+    transform: scale(1.1); 
 }
