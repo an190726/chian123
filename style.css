@@ -5,43 +5,50 @@ body {
     padding: 0;
 }
 
+/* Container cho Vùng 1 và Vùng 2 để chúng nằm cạnh nhau */
+/* Sử dụng Flexbox để dễ dàng tạo bố cục hai cột */
+#container-chinh {
+    display: flex;
+    min-height: 400px; /* Đảm bảo chiều cao để thấy rõ hiệu ứng */
+}
+
 /* Định dạng cho các vùng chung */
 div {
     padding: 15px;
-    margin-bottom: 10px; /* Tạo khoảng cách giữa các vùng */
-    color: #333; /* Màu chữ mặc định */
-    border-radius: 5px;
-    text-align: center; /* Căn giữa nội dung trong các vùng */
     box-sizing: border-box;
+    border-radius: 3px;
+    margin: 0; /* Loại bỏ margin-bottom cũ */
 }
 
-/* 1. Định dạng cho Vùng 1 */
+/* 1. Định dạng cho Vùng 1 (Sidebar/Menu) */
 #vung1 {
-    /* Yêu cầu từ bảng: Vùng 1 có màu nền Blue */
-    background-color: blue; 
+    /* Yêu cầu: Màu Xanh Dương (Blue) */
+    background-color: #007bff; 
     color: white;
-    padding: 20px;
+    width: 250px; /* Chiều rộng cố định cho sidebar */
+    text-align: center;
+    order: 1; /* Thứ tự hiển thị 1 */
 }
 
-#vung1 img {
-    max-width: 100px; /* Giả định logo không quá lớn */
-    height: auto;
-    display: block;
-    margin: 10px auto 0;
+#vung1 p {
+    font-weight: bold;
+    margin-top: 0;
 }
 
-/* 2. Định dạng cho Vùng 2 */
+/* 2. Định dạng cho Vùng 2 (Nội dung Chính) */
 #vung2 {
-    /* Yêu cầu từ bảng: Vùng 2 có màu nền Yellow */
-    background-color: yellow;
-    min-height: 300px; /* Cho vùng nội dung chính một chiều cao tối thiểu */
+    /* Yêu cầu: Màu Vàng (Yellow) */
+    background-color: #ffc107; 
+    flex-grow: 1; /* Chiếm hết không gian còn lại */
     text-align: left;
+    order: 2; /* Thứ tự hiển thị 2 */
 }
 
-/* 3. Định dạng cho Vùng 3 */
+/* 3. Định dạng cho Vùng 3 (Chân Trang/Footer) */
 #vung3 {
-    /* Yêu cầu từ bảng: Vùng 3 có màu nền Green */
-    background-color: green;
+    /* Yêu cầu: Màu Xanh Lá (Green) */
+    background-color: #28a745;
     color: white;
+    text-align: center;
+    margin-top: 10px; /* Thêm chút khoảng cách phía trên */
 }
-
