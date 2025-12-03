@@ -2,56 +2,68 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Home HTML</title>
-    <link rel="stylesheet" href="style.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giao Diện Mới: Header và 2 Cột</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="vung1">
-        <div class="nav-links"> 
+
+    <header id="header-moi">
+        <div class="logo">
+            <h1>AN190726 - Thiết Kế Mới</h1>
+        </div>
+        <nav class="main-nav">
             <a href="#">Trang chủ</a>
             <a href="#">Thông tin</a>
             <a href="#">Dịch vụ</a>
-        </div>
-        <img src="istockphoto-893660690-1024x1024.jpg" alt="Ảnh nền" width="30"> 
-    </div>
+            <a href="#">Liên hệ</a>
+        </nav>
+    </header>
 
-    <div id="vung2">
-        <p>Vùng nội dung</p>
-        <h2>Bảng Điểm Môn Học</h2>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Môn học</th>
-                    <th>Điểm giữa kỳ</th>
-                    <th>Điểm cuối kỳ</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Toán</td>
-                    <td>8.5</td>
-                    <td>9.0</td>
-                </tr>
-                <tr>
-                    <td>Văn</td>
-                    <td>7.0</td>
-                    <td>8.0</td>
-                </tr>
-                <tr>
-                    <td>Tiếng Anh</td>
-                    <td>9.5</td>
-                    <td>9.5</td>
-                </tr>
-            </tbody>
-        </table>
-        <p>Một số nội dung</p>
-    </div>
+    <main id="main-content-area">
+        
+        <aside class="sidebar">
+            <h3>Menu Phụ</h3>
+            <ul>
+                <li><a href="#">Mục 1</a></li>
+                <li><a href="#">Mục 2</a></li>
+                <li><a href="#">Mục 3</a></li>
+            </ul>
+        </aside>
 
-    <div id="vung3">
-        <div class="vung_con">
-            <p>Vùng chân trang / Footer</p>
-            <p>Nội dung chân trang</p>
-        </div>
-    </div>
+        <section class="main-article">
+            <h2>Bài Viết Chính</h2>
+            <p>Đây là khu vực nội dung chính của trang web. Nội dung này nằm bên phải cột Sidebar, tạo nên bố cục 2 cột đặc trưng và hiện đại.</p>
+
+            <h3>Bảng Dữ Liệu Cập Nhật</h3>
+            <table id="new-table">
+                <thead>
+                    <tr>
+                        <th>Môn học</th>
+                        <th>Giữa kỳ</th>
+                        <th>Cuối kỳ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Toán</td>
+                        <td>9.0</td>
+                        <td>8.5</td>
+                    </tr>
+                    <tr>
+                        <td>Văn</td>
+                        <td>7.5</td>
+                        <td>8.0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer id="footer-moi">
+        <p>&copy; 2023 Thiết Kế Mới. Mọi Quyền Được Bảo Lưu.</p>
+    </footer>
+
 </body>
 </html>
