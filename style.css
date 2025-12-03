@@ -3,58 +3,44 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex; /* Dùng Flexbox để đặt vung1 và vung2 cạnh nhau */
 }
 
-/* Định dạng cho vùng 1 */
+/* Định dạng cho các vùng chung */
+div {
+    padding: 15px;
+    margin-bottom: 10px; /* Tạo khoảng cách giữa các vùng */
+    color: #333; /* Màu chữ mặc định */
+    border-radius: 5px;
+    text-align: center; /* Căn giữa nội dung trong các vùng */
+    box-sizing: border-box;
+}
+
+/* 1. Định dạng cho Vùng 1 */
 #vung1 {
-    width: 250px; /* Chiều rộng cố định cho sidebar/vùng điều hướng */
-    background-color: #f0f0f0;
+    /* Yêu cầu từ bảng: Vùng 1 có màu nền Blue */
+    background-color: blue; 
+    color: white;
     padding: 20px;
-    border-right: 1px solid #ccc;
-    box-sizing: border-box; /* Đảm bảo padding không làm tăng tổng chiều rộng */
 }
 
-#vung1 a {
-    display: block; /* Mỗi liên kết nằm trên một dòng riêng */
-    padding: 5px 0;
-    text-decoration: none;
-    color: #0056b3;
+#vung1 img {
+    max-width: 100px; /* Giả định logo không quá lớn */
+    height: auto;
+    display: block;
+    margin: 10px auto 0;
 }
 
-#vung1 a:hover {
-    color: #003366;
-    text-decoration: underline;
-}
-
-/* Định dạng cho vùng 2 */
+/* 2. Định dạng cho Vùng 2 */
 #vung2 {
-    flex-grow: 1; /* Cho phép vùng 2 chiếm hết không gian còn lại */
-    padding: 20px;
-}
-
-/* Định dạng bảng */
-#myTable {
-    width: 100%;
-    border-collapse: collapse; /* Gộp các đường viền thành một */
-    margin-top: 15px;
-}
-
-#myTable th, #myTable td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    /* Yêu cầu từ bảng: Vùng 2 có màu nền Yellow */
+    background-color: yellow;
+    min-height: 300px; /* Cho vùng nội dung chính một chiều cao tối thiểu */
     text-align: left;
 }
 
-#myTable th {
-    background-color: #4CAF50;
+/* 3. Định dạng cho Vùng 3 */
+#vung3 {
+    /* Yêu cầu từ bảng: Vùng 3 có màu nền Green */
+    background-color: green;
     color: white;
-}
-
-#myTable tr:nth-child(even){
-    background-color: #f2f2f2;
-}
-
-#myTable tr:hover {
-    background-color: #ddd;
 }
