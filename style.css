@@ -1,215 +1,150 @@
-/* ----------------------------------- */
-/* Cài đặt Chung */
-/* ----------------------------------- */
+/* Thiết lập chung */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
+    margin: 20px;
+    background-color: #f0f2f5;
 }
 
-/* ----------------------------------- */
-/* Phần Header (Màu Đỏ & Xanh Dương) */
-/* ----------------------------------- */
-.header-container {
-    width: 100%;
+h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #bdc3c7;
+    padding-bottom: 5px;
 }
 
-.header-red-zone {
-    /* Vùng Màu Đỏ phía trên */
-    background-color: red;
-    height: 30px; 
-    border-bottom: 2px solid black; 
-}
-
-.header-blue-zone {
-    /* Vùng Màu Xanh Dương chứa nav */
-    background-color: blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 0;
-    position: relative;
-}
-
-/* Icon nhỏ nằm giữa như trong ảnh */
-.center-icon {
-    position: absolute;
-    bottom: -15px; /* Đặt dưới thanh nav */
-    width: 20px;
-    height: 20px;
-    background-color: white; /* Giả lập icon trắng */
-    border-radius: 50%;
-    border: 3px solid black;
-}
-
-/* Vùng 1: Thanh Liên Kết Ngang */
+/* ------------------------------------------- */
+/* --- Yêu cầu 1: Vùng 1 - Thanh Liên Kết --- */
+/* ------------------------------------------- */
 #vung-1 {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    /* Đặt các liên kết hiển thị theo hàng ngang */
     display: flex;
-    gap: 15px;
-    background-color: white; /* Nền trắng cho thanh liên kết */
-    padding: 5px 10px;
-    border-radius: 5px;
+    justify-content: space-around; /* Phân bổ đều giữa các liên kết */
 }
 
 .nav-link {
-    padding: 5px 10px;
+    padding: 10px 15px;
     text-decoration: none;
-    font-weight: bold;
-    color: white;
-    background-color: green; /* Màu xanh lá cây cho nút */
-    border-radius: 3px;
-    transition: background-color 0.3s;
-}
-
-/* Trạng thái liên kết (theo yêu cầu ban đầu) */
-.nav-link:link { background-color: #007bff; color: white; } /* Trang Chủ */
-.nav-link:hover { background-color: #38c172; } /* Hiệu ứng hover */
-.nav-link:visited { background-color: #3490dc; } /* Thông Tin */
-.nav-link:active { background-color: #e3342f; } /* Dịch Vụ */
-
-/* ----------------------------------- */
-/* Phần Nội Dung Chính (Xanh Lá Cây & Hồng) */
-/* ----------------------------------- */
-.content-wrapper {
-    background-color: pink; /* Nền ngoài màu hồng */
-    padding: 20px;
-}
-
-/* Vùng nội dung chính (màu xanh lá cây) */
-.content-wrapper > * {
-    background-color: #d1ffd1; /* Màu xanh lá nhạt cho các vùng nội dung */
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #90EE90;
     border-radius: 5px;
-}
-.content-title {
-    background-color: transparent; /* Loại bỏ màu nền xanh cho tiêu đề chính */
-    padding: 0;
-    border: none;
-    margin-top: 0;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
 
-.section-heading {
-    color: #333;
-    margin-top: 0;
+/* :link - Trạng thái mặc định ("Trong Chờ") */
+.nav-link:link {
+    color: #2980b9;
+    background-color: #ecf0f1;
+    border-color: #2980b9;
 }
 
-/* ----------------------------------- */
-/* Bảng Điểm Môn Học */
-/* ----------------------------------- */
-.score-table-section {
-    border: 2px solid yellow; /* Khung viền vàng cho Bảng Điểm */
-    padding: 10px;
-    background-color: #d1ffd1;
+/* :visited - Trạng thái liên kết đã được thăm ("Thông Tin" / Đã kiểm tra) */
+.nav-link:visited {
+    color: #7f8c8d;
+    background-color: #f7f9f9;
+    border-color: #7f8c8d;
 }
 
-.score-table-section table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+/* :hover - Trạng thái khi di chuột qua */
+.nav-link:hover {
+    color: white;
+    background-color: #3498db;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.score-table-section th, .score-table-section td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: left;
-}
-.score-table-section th {
-    background-color: #e0e0e0;
+/* :active - Trạng thái khi liên kết đang được nhấn ("Phục Vụ" / Hành động đang diễn ra) */
+.nav-link:active {
+    color: white;
+    background-color: #27ae60; 
+    transform: translateY(1px);
 }
 
-/* ----------------------------------- */
-/* Vùng 2: Form Đăng Ký (Khung Viền Vàng) */
-/* ----------------------------------- */
-.form-section {
-    border: 2px solid yellow; /* Khung viền vàng cho Form */
-}
 
-.custom-form {
-    background-color: #d1ffd1; /* Đảm bảo form vẫn nằm trên nền xanh */
+/* ------------------------------------------- */
+/* --- Yêu cầu 2: Vùng 2 - Form --- */
+/* ------------------------------------------- */
+#vung-2 {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+    border: 1px solid #ccc; /* Thêm đường viền như trong hình vẽ */
 }
-
-/* Định dạng Fieldset để tạo khung viền xung quanh các nhóm input */
-.custom-form fieldset {
-    border: 1px solid black; /* Viền đen cho form như trong hình */
-    padding: 15px;
-    margin: 10px 0;
-}
-.custom-form legend {
-    /* Ẩn legend nếu không cần tiêu đề bên trong khung */
-    display: none; 
-}
-
 
 .form-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
 }
 
 .form-group label {
-    width: 80px; /* Cố định chiều rộng label */
+    display: block;
+    margin-bottom: 5px;
     font-weight: bold;
-    margin-right: 10px;
+    color: #333;
 }
 
-/* Input, Select */
+/* Định dạng cho input và select */
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group select {
-    flex-grow: 1; /* Cho phép input/select mở rộng */
-    padding: 5px;
-    border: 1px solid #000;
-    border-radius: 0; /* Bo góc vuông như trong ảnh */
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #bdc3c7;
+    border-radius: 3px;
+    box-sizing: border-box; 
 }
 
-/* Sở thích (checkbox) */
-.hobby-group {
-    align-items: flex-start; /* Canh lề trên cho label */
-}
-.checkbox-group {
-    display: flex;
-    flex-direction: column;
-    margin-top: 0;
-}
-.checkbox-group label {
+/* Định dạng cho Checkbox Group (Sở thích) */
+.hobbies label {
+    display: inline-block; /* Cho phép label của sở thích nằm ngang */
+    margin-right: 15px;
     font-weight: normal;
-    width: auto;
-    margin-right: 10px;
+}
+.hobbies input[type="checkbox"] {
+    margin-right: 5px;
 }
 
-/* Nhóm nút Đăng Nhập/Thoát */
+/* Nút Đăng Nhập và Thoát */
 .button-group {
     display: flex;
-    gap: 10px;
-    justify-content: flex-start;
-    margin-top: 15px;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
 .button-group button {
-    padding: 5px 15px;
-    border: 1px solid black;
-    border-radius: 0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
     cursor: pointer;
     font-weight: bold;
-    background-color: #d1ffd1; /* Nền xanh nhạt của vùng chứa */
+    transition: background-color 0.2s;
+    width: 48%; /* Chia đều cho hai nút */
 }
 
 .submit-btn {
-    background-color: green; /* Nút Đăng nhập màu xanh lá đậm */
+    /* Nút Đăng Nhập */
+    background-color: #3498db;
     color: white;
 }
 
 .reset-btn {
-    background-color: red; /* Nút Thoát màu đỏ */
+    /* Nút Thoát (reset) */
+    background-color: #e74c3c;
     color: white;
 }
 
-.footer-note {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
+.submit-btn:hover {
+    background-color: #2980b9;
+}
+
+.reset-btn:hover {
+    background-color: #c0392b;
 }
