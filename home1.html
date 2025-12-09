@@ -3,72 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài Tập CSS - 09/12 (Khung Fieldset)</title>
-    <link rel="stylesheet" href="style.css"> 
-</head>
+    <title>Bài Tập CSS - chian123</title>
+    <link rel="stylesheet" href="style.css"> </head>
 <body>
 
-    <div id="vung-1">
-        <h2>menu</h2>
-        <nav>
-            <a href="#" class="nav-link">Trong Chờ</a>
-            <a href="#thong-tin" class="nav-link">Thông Tin</a>
-            <a href="#dich-vu" class="nav-link">Phục Vụ</a>
-        </nav>
-    </div>
+    <header class="header-container">
+        <div class="header-red-zone"></div>
+        
+        <div class="header-blue-zone">
+            <nav id="vung-1">
+                <a href="#" class="nav-link">Trang Chủ</a>
+                <a href="#thong-tin" class="nav-link">Thông Tin</a>
+                <a href="#dich-vu" class="nav-link">Dịch Vụ</a>
+            </nav>
+            <div class="center-icon"></div> </div>
+    </header>
 
-    <hr>
+    <main class="content-wrapper">
+        <h3 class="content-title">Vùng nội dung</h3>
 
-    <div id="vung-2">
-        <h2>dữ liệu</h2>
-        <form action="#" method="POST" class="custom-form">
-            
-            <fieldset class="input-fields">
-                <legend>Thông Tin Cơ Bản</legend>
-                
-                <div class="form-group">
-                    <label for="name">Tên:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="country">Quốc gia:</label>
-                    <select id="country" name="country">
-                        <option value="vn" selected>Việt Nam</option>
-                        <option value="us">Hoa Kỳ</option>
-                    </select>
-                </div>
-            </fieldset>
+        <section class="score-table-section">
+            <h4 class="section-heading">Bảng Điểm Môn Học</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Môn học</th>
+                        <th>Điểm giữa kỳ</th>
+                        <th>Điểm cuối kỳ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Toán</td>
+                        <td>8.5</td>
+                        <td>9.0</td>
+                    </tr>
+                    <tr>
+                        <td>Văn</td>
+                        <td>7.0</td>
+                        <td>8.0</td>
+                    </tr>
+                    <tr>
+                        <td>Tiếng Anh</td>
+                        <td>9.5</td>
+                        <td>9.5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-            <fieldset class="hobbies-field">
-                <legend>Sở Thích</legend>
-                <div class="checkbox-group">
-                    <input type="checkbox" id="sport" name="hobby" value="sport">
-                    <label for="sport">Thể thao</label>
+        <section id="vung-2" class="form-section">
+            <h4 class="section-heading">Form Đăng Ký/Thông tin người dùng</h4>
+            <form action="#" method="POST" class="custom-form">
+                <fieldset>
+                    <div class="form-group">
+                        <label for="name">Tên:</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="country">Quốc gia:</label>
+                        <select id="country" name="country">
+                            <option value="vn" selected>Việt Nam</option>
+                            <option value="us">Hoa Kỳ</option>
+                        </select>
+                    </div>
 
-                    <input type="checkbox" id="reading" name="hobby" value="reading">
-                    <label for="reading">Đọc sách</label>
+                    <div class="form-group hobby-group">
+                        <label>Sở thích:</label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="sport" name="hobby" value="sport">
+                            <label for="sport">Thể thao</label>
 
-                    <input type="checkbox" id="music" name="hobby" value="music">
-                    <label for="music">Nghe nhạc</label>
-                </div>
-            </fieldset>
+                            <input type="checkbox" id="reading" name="hobby" value="reading">
+                            <label for="reading">Đọc sách</label>
 
-            <fieldset class="button-field">
-                <legend>Hành Động</legend>
-                <div class="button-group">
-                    <button type="submit" class="submit-btn">Đăng Nhập</button>
-                    <button type="reset" class="reset-btn">Thoát</button>
-                </div>
-            </fieldset>
+                            <input type="checkbox" id="music" name="hobby" value="music">
+                            <label for="music">Nghe nhạc</label>
+                        </div>
+                    </div>
 
-        </form>
-    </div>
+                    <div class="button-group">
+                        <button type="submit" class="submit-btn">Đăng nhập</button>
+                        <button type="reset" class="reset-btn">Thoát</button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+        
+        <p class="footer-note">Một số nội dung</p>
+    </main>
 
 </body>
 </html>
