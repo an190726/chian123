@@ -35,7 +35,7 @@ body {
 }
 
 /* ------------------------------------- */
-/* Định kiểu Menu (Yêu cầu 1)            */
+/* Định kiểu Menu (Yêu cầu Bài tập) */
 /* ------------------------------------- */
 .navbar {
   overflow: hidden; 
@@ -69,7 +69,7 @@ body {
 .row::after {
   content: "";
   display: table;
-  clear: both; /* Clearfix để xóa float */
+  clear: both; /* Clearfix */
 }
 
 .column {
@@ -82,13 +82,12 @@ body {
   border-right: 1px solid #ddd; 
 }
 
-/* Loại bỏ đường viền bên phải cho cột cuối cùng */
 .column:last-child {
     border-right: none;
 }
 
 /* ------------------------------------- */
-/* Định kiểu Form (Yêu cầu 2)           */
+/* Định kiểu Form (Yêu cầu Bài tập)      */
 /* ------------------------------------- */
 .custom-form {
     max-width: 90%; 
@@ -100,18 +99,18 @@ body {
     margin-bottom: 10px;
 }
 
-/* Định kiểu cho Nhãn (Label) */
+/* Nhãn (Label) */
 .custom-form label {
     display: block; 
     float: left;
-    width: 80px; 
+    width: 80px; /* Cố định chiều rộng cho nhãn */
     text-align: right;
     padding-right: 10px;
     line-height: 28px; 
     font-weight: bold;
 }
 
-/* Định kiểu cho Input và Select */
+/* Input và Select */
 .custom-form input[type="text"],
 .custom-form input[type="email"],
 .custom-form select {
@@ -123,15 +122,15 @@ body {
     float: left;
 }
 
-/* Điều chỉnh lại cho select box nếu cần */
 .custom-form select {
     width: 100px; 
 }
 
-/* Định kiểu Sở thích (Checkbox) */
+/* Sở thích (Checkbox) */
 .hobbies .checkbox-group {
     display: block;
     margin-left: 90px;
+    clear: both;
 }
 .hobbies .checkbox-group label {
     float: none;
@@ -139,9 +138,10 @@ body {
     padding-right: 10px;
     font-weight: normal;
     width: auto;
+    line-height: normal;
 }
 
-/* Định kiểu nút */
+/* Nút */
 .button-group {
     clear: both;
     padding-left: 90px; 
@@ -152,7 +152,7 @@ body {
     color: white;
     padding: 8px 15px;
     margin-right: 10px;
-    border: 1px solid #fff;
+    border: none;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s;
@@ -161,11 +161,6 @@ body {
 .reset-btn {
     background-color: #999;
 }
-
-.button-group button:hover {
-    background-color: #777;
-}
-
 
 /* ------------------------------------- */
 /* Media Query cho Responsive Design     */
@@ -180,7 +175,21 @@ body {
      flex-direction: column; /* Xếp menu dọc khi màn hình nhỏ */
   }
   .navbar a {
-    margin: 5px auto; /* Căn giữa menu dọc */
-    width: 80%; /* Chiếm chiều rộng lớn hơn */
+    margin: 5px auto; 
+    width: 80%; 
+  }
+  /* Căn chỉnh lại form trên mobile */
+  .custom-form label {
+      width: 100%;
+      text-align: left;
+      padding-right: 0;
+  }
+  .custom-form input[type="text"],
+  .custom-form input[type="email"] {
+      width: 100%;
+  }
+  .button-group {
+      padding-left: 0;
+      text-align: center;
   }
 }
