@@ -1,66 +1,182 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài Tập CSS - 09/12</title>
-    <link rel="stylesheet" href="style.css"> </head>
+    <title>CSS Template using Float</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <style>
+        /* Thiết lập chung và Box Model */
+        * {
+            box-sizing: border-box; 
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        /* Định kiểu cho Header và Footer */
+        .header {
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h2 {
+            margin-top: 0;
+            font-size: 2em;
+        }
+
+        .footer {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Định kiểu Menu (Yêu cầu 1) */
+        .navbar {
+            overflow: hidden; 
+            background-color: #333;
+            margin-top: 10px;
+            text-align: left; /* Căn chỉnh nội dung liên kết */
+        }
+
+        .navbar a {
+            float: left; /* Đặt các liên kết nằm ngang */
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Định kiểu cho Bố cục Cột (Float) */
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .column {
+            float: left; 
+            width: 33.33%; /* Chia đều 3 cột */
+            padding: 20px;
+            min-height: 250px; 
+            text-align: left;
+            color: #333;
+            border-right: 1px solid #ddd; 
+        }
+
+        .column:last-child {
+            border-right: none;
+        }
+        
+        /* Định kiểu Form (Yêu cầu 2) */
+        .contact-form label {
+            display: inline-block; 
+            width: 80px; 
+            text-align: right;
+            margin-right: 5px;
+            font-weight: bold;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form select {
+            width: calc(100% - 100px); 
+            padding: 5px;
+            margin: 4px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .contact-form button {
+            background-color: #555;
+            color: white;
+            padding: 8px 15px;
+            margin: 10px 10px 0 85px; /* Điều chỉnh vị trí nút */
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .contact-form button[type="reset"] {
+            background-color: #999;
+            margin-left: 0;
+        }
+
+        /* Media Query cho Responsive Design */
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%; 
+                border-right: none; 
+                border-bottom: 1px solid #ddd; 
+            }
+        }
+    </style>
+</head>
 <body>
 
-    <div id="vung-1">
-        <h2>menu</h2>
-        <nav>
-            <a href="#" class="nav-link">Trong Chờ</a>
-            <a href="#thong-tin" class="nav-link">Thông Tin</a>
-            <a href="#dich-vu" class="nav-link">Phục Vụ</a>
-        </nav>
+<h2>CSS Template using Float</h2>
+<p>In this example, we have created a header, three equal columns and a footer. On smaller screens, the columns will stack on top of each other.</p>
+<p>Resize the browser window to see the responsive effect.</p>
+
+<div class="header">
+    <h2>Header</h2>
+    
+    <div class="navbar">
+        <a href="#trangchu">Trang chủ</a>
+        <a href="#thongtin">Thông tin</a>
+        <a href="#dichvu">Dịch vụ</a>
     </div>
+</div>
 
-    <hr>
+<div class="row">
+    <div class="column" style="background-color:#aaa;">
+        <h3>Đăng ký/Liên hệ</h3>
+        <form class="contact-form">
+            <label for="name">Tên:</label>
+            <input type="text" id="name" name="name"><br>
 
-    <div id="vung-2">
-        <h2>nội dung</h2></h2>
-        <form action="#" method="POST" class="custom-form">
-            
-            <div class="form-group">
-                <label for="name">Tên:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="country">Quốc gia:</label>
-                <select id="country" name="country">
-                    <option value="vn" selected>Việt Nam</option>
-                    <option value="us">Hoa Kỳ</option>
-                    <option value="jp">Nhật Bản</option>
-                </select>
-            </div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br>
 
-            <div class="form-group hobbies">
-                <label>Sở thích:</label>
-                <div class="checkbox-group">
-                    <input type="checkbox" id="sport" name="hobby" value="sport">
-                    <label for="sport">Thể thao</label>
+            <label for="country">Quốc gia:</label>
+            <select id="country" name="country">
+                <option value="vietnam">Việt Nam</option>
+                <option value="usa">Mỹ</option>
+                <option value="other">Khác</option>
+            </select><br><br>
 
-                    <input type="checkbox" id="reading" name="hobby" value="reading">
-                    <label for="reading">Đọc sách</label>
+            <label>Sở thích:</label>
+            <input type="checkbox" id="book" name="interest" value="book">
+            <label for="book" style="width: auto;">Đọc sách</label>
+            <input type="checkbox" id="music" name="interest" value="music">
+            <label for="music" style="width: auto;">Nghe nhạc</label><br>
 
-                    <input type="checkbox" id="music" name="hobby" value="music">
-                    <label for="music">Nghe nhạc</label>
-                </div>
-            </div>
-
-            <div class="button-group">
-                <button type="submit" class="submit-btn">Đăng Nhập</button>
-                <button type="reset" class="reset-btn">Thoát</button>
-            </div>
+            <button type="submit">Đăng nhập</button>
+            <button type="reset">Thoát</button>
         </form>
     </div>
+
+    <div class="column" style="background-color:#bbb;">
+        Column 2 Content
+    </div>
+
+    <div class="column" style="background-color:#ccc;">
+        Column 3 Content
+    </div>
+</div>
+
+<div class="footer">
+    <p>Footer</p>
+</div>
 
 </body>
 </html>
