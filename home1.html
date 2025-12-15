@@ -40,13 +40,13 @@
             margin-top: 10px;
         }
 
-        /* Định kiểu Menu (Yêu cầu 1) */
+        /* Định kiểu Menu (Yêu cầu 1: 3 liên kết ngang) */
         .navbar {
             overflow: hidden; 
             background-color: #333;
             margin-top: 10px;
             display: flex; 
-            justify-content: center; /* Căn giữa các liên kết */
+            justify-content: center; /* Căn giữa */
         }
 
         .navbar a {
@@ -55,7 +55,7 @@
             text-align: center;
             padding: 14px 20px;
             text-decoration: none;
-            border: 1px solid #777; /* Đường viền theo yêu cầu bài tập */
+            border: 1px solid #777; 
             margin: 0 5px;
             background-color: #555;
             transition: background-color 0.3s;
@@ -73,7 +73,7 @@
         .row::after {
             content: "";
             display: table;
-            clear: both; /* Clearfix để xóa float */
+            clear: both; /* Clearfix */
         }
 
         .column {
@@ -127,7 +127,7 @@
         }
 
         .custom-form select {
-            width: 100px; /* Điều chỉnh lại width nhỏ hơn cho select box */
+            width: 100px; 
         }
         
         /* Sở thích (Checkbox) */
@@ -172,11 +172,9 @@
             background-color: #999;
         }
 
-        .button-group button:hover {
-            background-color: #777;
-        }
-
-        /* Media Query cho Responsive Design */
+        /* ------------------------------------- */
+        /* Media Query cho Responsive Design     */
+        /* ------------------------------------- */
         @media screen and (max-width: 600px) {
             .column {
                 width: 100%; 
@@ -190,7 +188,6 @@
                 margin: 5px auto; 
                 width: 80%; 
             }
-            /* Đảm bảo Form vẫn căn chỉnh tốt trên mobile */
             .custom-form label {
                 width: 100%;
                 text-align: left;
@@ -213,6 +210,20 @@
 <p>In this example, we have created a header, three equal columns and a footer. On smaller screens, the columns will stack on top of each other.</p>
 <p>Resize the browser window to see the responsive effect.</p>
 
-    
+<div class="header">
+
+    <div class="column" style="background-color:#bbb;">
+        Column 2 Content
+    </div>
+
+    <div class="column" style="background-color:#ccc;">
+        Column 3 Content
+    </div>
+</div>
+
+<div class="footer">
+    <p>Footer</p>
+</div>
+
 </body>
 </html>
