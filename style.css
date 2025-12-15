@@ -1,150 +1,186 @@
-/* Thiết lập chung */
+/* ------------------------------------- */
+/* Thiết lập chung và Box Model           */
+/* ------------------------------------- */
+* {
+  box-sizing: border-box; /* Quan trọng cho bố cục float/responsive */
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #f0f2f5;
+  margin: 0;
 }
 
-h2 {
-    color: #2c3e50;
-    border-bottom: 2px solid #bdc3c7;
-    padding-bottom: 5px;
+/* ------------------------------------- */
+/* Định kiểu cho Header và Footer        */
+/* ------------------------------------- */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-/* ------------------------------------------- */
-/* --- Yêu cầu 1: Vùng 1 - Thanh Liên Kết --- */
-/* ------------------------------------------- */
-#vung-1 {
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.header h2 {
+    margin-top: 0;
+    font-size: 2em;
 }
 
-nav {
-    /* Đặt các liên kết hiển thị theo hàng ngang */
-    display: flex;
-    justify-content: space-around; /* Phân bổ đều giữa các liên kết */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+  margin-top: 10px;
 }
 
-.nav-link {
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
+/* ------------------------------------- */
+/* Định kiểu Menu (Yêu cầu 1)            */
+/* ------------------------------------- */
+.navbar {
+  overflow: hidden; 
+  background-color: #333;
+  margin-top: 10px;
+  display: flex; /* Dùng flexbox để căn chỉnh menu dễ dàng */
+  justify-content: center; 
 }
 
-/* :link - Trạng thái mặc định ("Trong Chờ") */
-.nav-link:link {
-    color: #2980b9;
-    background-color: #ecf0f1;
-    border-color: #2980b9;
+.navbar a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  border: 1px solid #777; /* Thêm đường viền theo yêu cầu bài tập */
+  margin: 0 5px;
+  background-color: #555;
+  transition: background-color 0.3s;
 }
 
-/* :visited - Trạng thái liên kết đã được thăm ("Thông Tin" / Đã kiểm tra) */
-.nav-link:visited {
-    color: #7f8c8d;
-    background-color: #f7f9f9;
-    border-color: #7f8c8d;
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
-/* :hover - Trạng thái khi di chuột qua */
-.nav-link:hover {
-    color: white;
-    background-color: #3498db;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* ------------------------------------- */
+/* Định kiểu cho Bố cục Cột (Float)      */
+/* ------------------------------------- */
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both; /* Clearfix để xóa float */
 }
 
-/* :active - Trạng thái khi liên kết đang được nhấn ("Phục Vụ" / Hành động đang diễn ra) */
-.nav-link:active {
-    color: white;
-    background-color: #27ae60; 
-    transform: translateY(1px);
+.column {
+  float: left; 
+  width: 33.33%; 
+  padding: 20px;
+  min-height: 250px; 
+  text-align: left;
+  color: #333;
+  border-right: 1px solid #ddd; 
 }
 
+/* Loại bỏ đường viền bên phải cho cột cuối cùng */
+.column:last-child {
+    border-right: none;
+}
 
-/* ------------------------------------------- */
-/* --- Yêu cầu 2: Vùng 2 - Form --- */
-/* ------------------------------------------- */
-#vung-2 {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    margin: 20px auto;
-    border: 1px solid #ccc; /* Thêm đường viền như trong hình vẽ */
+/* ------------------------------------- */
+/* Định kiểu Form (Yêu cầu 2)           */
+/* ------------------------------------- */
+.custom-form {
+    max-width: 90%; 
+    margin: auto;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    clear: both; 
+    margin-bottom: 10px;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
+/* Định kiểu cho Nhãn (Label) */
+.custom-form label {
+    display: block; 
+    float: left;
+    width: 80px; 
+    text-align: right;
+    padding-right: 10px;
+    line-height: 28px; 
     font-weight: bold;
-    color: #333;
 }
 
-/* Định dạng cho input và select */
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #bdc3c7;
-    border-radius: 3px;
-    box-sizing: border-box; 
+/* Định kiểu cho Input và Select */
+.custom-form input[type="text"],
+.custom-form input[type="email"],
+.custom-form select {
+    width: calc(100% - 90px); 
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    float: left;
 }
 
-/* Định dạng cho Checkbox Group (Sở thích) */
-.hobbies label {
-    display: inline-block; /* Cho phép label của sở thích nằm ngang */
-    margin-right: 15px;
+/* Điều chỉnh lại cho select box nếu cần */
+.custom-form select {
+    width: 100px; 
+}
+
+/* Định kiểu Sở thích (Checkbox) */
+.hobbies .checkbox-group {
+    display: block;
+    margin-left: 90px;
+}
+.hobbies .checkbox-group label {
+    float: none;
+    display: inline-block;
+    padding-right: 10px;
     font-weight: normal;
-}
-.hobbies input[type="checkbox"] {
-    margin-right: 5px;
+    width: auto;
 }
 
-/* Nút Đăng Nhập và Thoát */
+/* Định kiểu nút */
 .button-group {
-    display: flex;
-    justify-content: space-between;
+    clear: both;
+    padding-left: 90px; 
     margin-top: 20px;
 }
-
 .button-group button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.2s;
-    width: 48%; /* Chia đều cho hai nút */
-}
-
-.submit-btn {
-    /* Nút Đăng Nhập */
-    background-color: #3498db;
+    background-color: #555;
     color: white;
+    padding: 8px 15px;
+    margin-right: 10px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .reset-btn {
-    /* Nút Thoát (reset) */
-    background-color: #e74c3c;
-    color: white;
+    background-color: #999;
 }
 
-.submit-btn:hover {
-    background-color: #2980b9;
+.button-group button:hover {
+    background-color: #777;
 }
 
-.reset-btn:hover {
-    background-color: #c0392b;
+
+/* ------------------------------------- */
+/* Media Query cho Responsive Design     */
+/* ------------------------------------- */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%; /* Các cột xếp chồng lên nhau */
+    border-right: none; 
+    border-bottom: 1px solid #ddd; 
+  }
+  .navbar {
+     flex-direction: column; /* Xếp menu dọc khi màn hình nhỏ */
+  }
+  .navbar a {
+    margin: 5px auto; /* Căn giữa menu dọc */
+    width: 80%; /* Chiếm chiều rộng lớn hơn */
+  }
 }
