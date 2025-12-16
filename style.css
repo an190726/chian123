@@ -1,47 +1,54 @@
-/* Thiết lập cơ bản cho toàn bộ trang */
+/*
+   FILE: style.css
+   Mục đích: Định dạng cho trang Home02.html có sidenav cố định và full-height
+*/
+
+/* --- 1. Reset và Thiết lập cơ bản --- */
 body {
-    margin: 0; /* Xóa margin mặc định của body */
+    margin: 0; /* Xóa margin mặc định của body để sidenav có thể sát cạnh */
     font-family: Arial, sans-serif;
-    background-color: #f1f1f1; /* Màu nền nhẹ cho dễ nhìn */
+    line-height: 1.6;
 }
 
-/* Định dạng cho thanh điều hướng bên (sidenav) */
+/* --- 2. Định dạng cho Thanh Điều hướng Bên (Sidenav) --- */
 .sidenav {
-    height: 100%; /* Chiều cao đầy đủ 100% của viewport */
+    height: 100%; /* Đảm bảo thanh điều hướng chiếm toàn bộ chiều cao viewport */
     width: 200px; /* Chiều rộng cố định của sidenav */
     position: fixed; /* Cố định vị trí, không cuộn theo trang */
     z-index: 1; /* Đảm bảo sidenav nằm trên các phần tử khác */
     top: 0; /* Bắt đầu từ đỉnh trang */
     left: 0; /* Bắt đầu từ bên trái */
-    background-color: #111; /* Màu nền tối cho sidenav */
-    overflow-x: hidden; /* Ẩn thanh cuộn ngang nếu nội dung quá rộng */
+    background-color: #000; /* Màu nền đen như trong hình */
+    overflow-x: hidden; /* Ẩn thanh cuộn ngang */
     padding-top: 20px; /* Khoảng đệm trên */
-    box-sizing: border-box; /* Tính padding và border vào trong width/height */
+    box-sizing: border-box; /* Bao gồm padding và border trong width/height */
 }
 
-/* Định dạng cho các liên kết (link) trong sidenav */
+/* Định dạng cho các liên kết (Link) trong sidenav */
 .sidenav a {
-    padding: 6px 8px 6px 16px; /* Khoảng đệm (trên, phải, dưới, trái) */
+    padding: 15px 16px; /* Khoảng đệm cho mỗi liên kết */
     text-decoration: none; /* Xóa gạch chân */
-    font-size: 20px;
-    color: #818181; /* Màu chữ xám */
-    display: block; /* Hiển thị dưới dạng khối để chiếm toàn bộ chiều rộng */
+    font-size: 18px;
+    color: #f1f1f1; /* Màu chữ trắng/sáng */
+    display: block; /* Hiển thị dưới dạng khối để dễ dàng nhấp và định dạng */
     transition: 0.3s; /* Hiệu ứng chuyển đổi mượt mà */
 }
 
-/* Hiệu ứng hover khi rê chuột qua các liên kết */
+/* Hiệu ứng hover cho các liên kết */
 .sidenav a:hover {
-    color: #f1f1f1; /* Đổi màu chữ sang trắng khi hover */
-    background-color: #555; /* Đổi màu nền khi hover */
+    color: #fff;
+    /* Có thể thêm background-color: #555; nếu muốn hiệu ứng rõ ràng hơn,
+       nhưng hình ảnh mẫu trông có vẻ chỉ đổi màu chữ */
 }
 
-/* Định dạng cho khu vực nội dung chính */
+/* --- 3. Định dạng cho Khu vực Nội dung Chính (Content) --- */
 .content {
-    margin-left: 200px; /* Đẩy nội dung chính sang phải bằng với chiều rộng của sidenav */
-    padding: 1px 16px; /* Khoảng đệm cho nội dung */
+    /* Đẩy nội dung chính sang phải bằng với chiều rộng của sidenav để tránh bị che */
+    margin-left: 200px;
+    padding: 1px 20px; /* Khoảng đệm xung quanh nội dung */
 }
 
-/* Định dạng cho tiêu đề h2 trong nội dung */
+/* Định dạng cho các thành phần trong nội dung */
 .content h2 {
-    color: #333;
+    color: #333; /* Màu chữ tối cho tiêu đề */
 }
