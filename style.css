@@ -1,195 +1,47 @@
-/* ------------------------------------- */
-/* Thiết lập chung và Box Model           */
-/* ------------------------------------- */
-* {
-  box-sizing: border-box; /* Quan trọng cho bố cục float/responsive */
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
+/* Thiết lập cơ bản cho toàn bộ trang */
 body {
-  margin: 0;
+    margin: 0; /* Xóa margin mặc định của body */
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1; /* Màu nền nhẹ cho dễ nhìn */
 }
 
-/* ------------------------------------- */
-/* Định kiểu cho Header và Footer        */
-/* ------------------------------------- */
-.header {
-  background-color: #f1f1f1;
-  padding: 20px;
-  text-align: center;
-  margin-bottom: 10px;
+/* Định dạng cho thanh điều hướng bên (sidenav) */
+.sidenav {
+    height: 100%; /* Chiều cao đầy đủ 100% của viewport */
+    width: 200px; /* Chiều rộng cố định của sidenav */
+    position: fixed; /* Cố định vị trí, không cuộn theo trang */
+    z-index: 1; /* Đảm bảo sidenav nằm trên các phần tử khác */
+    top: 0; /* Bắt đầu từ đỉnh trang */
+    left: 0; /* Bắt đầu từ bên trái */
+    background-color: #111; /* Màu nền tối cho sidenav */
+    overflow-x: hidden; /* Ẩn thanh cuộn ngang nếu nội dung quá rộng */
+    padding-top: 20px; /* Khoảng đệm trên */
+    box-sizing: border-box; /* Tính padding và border vào trong width/height */
 }
 
-.header h2 {
-    margin-top: 0;
-    font-size: 2em;
+/* Định dạng cho các liên kết (link) trong sidenav */
+.sidenav a {
+    padding: 6px 8px 6px 16px; /* Khoảng đệm (trên, phải, dưới, trái) */
+    text-decoration: none; /* Xóa gạch chân */
+    font-size: 20px;
+    color: #818181; /* Màu chữ xám */
+    display: block; /* Hiển thị dưới dạng khối để chiếm toàn bộ chiều rộng */
+    transition: 0.3s; /* Hiệu ứng chuyển đổi mượt mà */
 }
 
-.footer {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
-  margin-top: 10px;
+/* Hiệu ứng hover khi rê chuột qua các liên kết */
+.sidenav a:hover {
+    color: #f1f1f1; /* Đổi màu chữ sang trắng khi hover */
+    background-color: #555; /* Đổi màu nền khi hover */
 }
 
-/* ------------------------------------- */
-/* Định kiểu Menu (Yêu cầu Bài tập) */
-/* ------------------------------------- */
-.navbar {
-  overflow: hidden; 
-  background-color: #333;
-  margin-top: 10px;
-  display: flex; /* Dùng flexbox để căn chỉnh menu dễ dàng */
-  justify-content: center; 
+/* Định dạng cho khu vực nội dung chính */
+.content {
+    margin-left: 200px; /* Đẩy nội dung chính sang phải bằng với chiều rộng của sidenav */
+    padding: 1px 16px; /* Khoảng đệm cho nội dung */
 }
 
-.navbar a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-  border: 1px solid #777; /* Thêm đường viền theo yêu cầu bài tập */
-  margin: 0 5px;
-  background-color: #555;
-  transition: background-color 0.3s;
-}
-
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* ------------------------------------- */
-/* Định kiểu cho Bố cục Cột (Float)      */
-/* ------------------------------------- */
-
-.row::after {
-  content: "";
-  display: table;
-  clear: both; /* Clearfix */
-}
-
-.column {
-  float: left; 
-  width: 33.33%; 
-  padding: 20px;
-  min-height: 250px; 
-  text-align: left;
-  color: #333;
-  border-right: 1px solid #ddd; 
-}
-
-.column:last-child {
-    border-right: none;
-}
-
-/* ------------------------------------- */
-/* Định kiểu Form (Yêu cầu Bài tập)      */
-/* ------------------------------------- */
-.custom-form {
-    max-width: 90%; 
-    margin: auto;
-}
-
-.form-group {
-    clear: both; 
-    margin-bottom: 10px;
-}
-
-/* Nhãn (Label) */
-.custom-form label {
-    display: block; 
-    float: left;
-    width: 80px; /* Cố định chiều rộng cho nhãn */
-    text-align: right;
-    padding-right: 10px;
-    line-height: 28px; 
-    font-weight: bold;
-}
-
-/* Input và Select */
-.custom-form input[type="text"],
-.custom-form input[type="email"],
-.custom-form select {
-    width: calc(100% - 90px); 
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    display: block;
-    float: left;
-}
-
-.custom-form select {
-    width: 100px; 
-}
-
-/* Sở thích (Checkbox) */
-.hobbies .checkbox-group {
-    display: block;
-    margin-left: 90px;
-    clear: both;
-}
-.hobbies .checkbox-group label {
-    float: none;
-    display: inline-block;
-    padding-right: 10px;
-    font-weight: normal;
-    width: auto;
-    line-height: normal;
-}
-
-/* Nút */
-.button-group {
-    clear: both;
-    padding-left: 90px; 
-    margin-top: 20px;
-}
-.button-group button {
-    background-color: #555;
-    color: white;
-    padding: 8px 15px;
-    margin-right: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.reset-btn {
-    background-color: #999;
-}
-
-/* ------------------------------------- */
-/* Media Query cho Responsive Design     */
-/* ------------------------------------- */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%; /* Các cột xếp chồng lên nhau */
-    border-right: none; 
-    border-bottom: 1px solid #ddd; 
-  }
-  .navbar {
-     flex-direction: column; /* Xếp menu dọc khi màn hình nhỏ */
-  }
-  .navbar a {
-    margin: 5px auto; 
-    width: 80%; 
-  }
-  /* Căn chỉnh lại form trên mobile */
-  .custom-form label {
-      width: 100%;
-      text-align: left;
-      padding-right: 0;
-  }
-  .custom-form input[type="text"],
-  .custom-form input[type="email"] {
-      width: 100%;
-  }
-  .button-group {
-      padding-left: 0;
-      text-align: center;
-  }
+/* Định dạng cho tiêu đề h2 trong nội dung */
+.content h2 {
+    color: #333;
 }
