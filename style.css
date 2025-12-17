@@ -1,67 +1,70 @@
-/* style.css */
-
+/* Thiết lập cơ bản (Reset/Normalize) */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    color: #34495e; 
+    padding: 0;
+    /* Đặt màu nền chung cho trang */
+    background-color: #f4f4f4; 
 }
 
-.sidenav {
-    height: 100%;
-    width: 160px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #1a1a1a; 
-    overflow-x: hidden;
-    padding-top: 20px;
+/* Thanh Điều Hướng (Topnav) - Dải màu đen ở trên cùng */
+.topnav {
+    background-color: #333; /* Màu nền đen sẫm */
+    overflow: hidden;
+    padding: 10px 0; /* Thêm padding trên và dưới */
 }
 
-.sidenav a {
-    padding: 10px 15px;
+/* Các liên kết trong Topnav */
+.topnav a {
+    float: left;
+    color: white; /* Màu chữ trắng */
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
-    font-size: 18px;
-    color: #95a5a6; 
-    display: block;
+    font-size: 17px;
+    /* Căn chỉnh đường viền đen bên trái để giống hình mẫu */
+    border-left: 1px solid #111; 
+}
+
+/* Loại bỏ đường viền ở liên kết đầu tiên */
+.topnav a:first-child {
+    border-left: none;
+}
+
+/* Hiệu ứng di chuột */
+.topnav a:hover {
+    background-color: #555;
+    color: white;
+}
+
+/* Khu Vực Nội Dung Chính - Màu xám nhạt lớn */
+.content-area {
+    padding: 30px 40px;
+    /* Màu nền xám nhạt giống hình */
+    background-color: #e9e9e9; 
+    /* Đảm bảo nội dung lấp đầy không gian giữa topnav và footer */
+    min-height: 50vh; 
+}
+
+.content-area h1 {
+    font-size: 36px;
     font-weight: bold;
+    margin-top: 0;
 }
 
-.sidenav a:hover {
-    color: #3498db; 
-    background-color: #2c3e50; 
+.content-area p {
+    font-size: 18px;
+    color: #666;
 }
 
-.content {
-    margin-left: 160px;
-    padding: 0 20px;
-}
-
-.content h2 {
-    color: #2c3e50;
-}
-
-.content p {
-    color: #7f8c8d;
-}
-
-@media screen and (max-width: 600px) {
-    .sidenav {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-    .sidenav a {
-        float: left;
-    }
-    .content {
-        margin-left: 0;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .sidenav a {
-        text-align: center;
-        float: none;
-    }
+/* Chân Trang (Footer) - Dải màu xám sáng */
+.footer {
+    /* Màu nền xám sáng, hơi khác với màu nền body */
+    background-color: #ddd; 
+    color: #333;
+    text-align: left; /* Chữ "Footer" căn trái */
+    padding: 20px 40px;
+    font-size: 16px;
+    /* Đường viền mỏng ở trên để tách biệt, giống hình */
+    border-top: 1px solid #ccc; 
 }
