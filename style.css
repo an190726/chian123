@@ -10,52 +10,58 @@ body {
     color: #333;
 }
 
-/* Phần đầu trang */
+/* Phần tiêu đề giữa trang */
 .header {
     text-align: center;
     padding: 60px 20px;
 }
 
 .header h1 {
-    font-size: 35px;
-    margin-bottom: 5px;
+    font-size: 45px;
+    margin: 0;
+    font-weight: bold;
 }
 
-/* Container chính sử dụng Flexbox */
+.header p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Hệ thống lưới (Grid) */
 .row {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 10px;
+    padding: 10px;
 }
 
-/* Mỗi cột chiếm 25% chiều rộng (4 cột) */
+/* Cột chiếm 25% chiều rộng (4 cột trên 1 hàng) */
 .column {
     flex: 25%;
     max-width: 25%;
     padding: 10px;
 }
 
-/* Định dạng hình ảnh */
 .column img {
     width: 100%;
     height: auto;
     vertical-align: middle;
-    border-radius: 4px;
-    /* Hiệu ứng đen trắng như ảnh mẫu */
+    border-radius: 4px; /* Bo nhẹ góc ảnh */
+    
+    /* Hiệu ứng đen trắng như trong hình mẫu của bạn */
     filter: grayscale(100%);
     transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hiệu ứng khi di chuột qua ảnh */
+.column img:hover {
+    filter: grayscale(0%); /* Hiện màu khi hover */
+    transform: scale(1.02); /* Phóng to nhẹ */
     cursor: pointer;
 }
 
-/* Hiệu ứng khi di chuột qua ảnh: Hiện màu và phóng to nhẹ */
-.column img:hover {
-    filter: grayscale(0%);
-    transform: scale(1.02);
-}
+/* --- Responsive (Độ tương thích màn hình) --- */
 
-/* --- Responsive (Phản hồi màn hình) --- */
-
-/* Màn hình dưới 800px: Hiển thị 2 cột */
+/* Màn hình máy tính bảng (Dưới 800px): Hiển thị 2 cột */
 @media screen and (max-width: 800px) {
     .column {
         flex: 50%;
@@ -63,13 +69,13 @@ body {
     }
 }
 
-/* Màn hình dưới 600px: Hiển thị 1 cột duy nhất */
+/* Màn hình điện thoại (Dưới 600px): Hiển thị 1 cột */
 @media screen and (max-width: 600px) {
     .column {
         flex: 100%;
         max-width: 100%;
     }
     .header h1 {
-        font-size: 25px;
+        font-size: 30px;
     }
 }
