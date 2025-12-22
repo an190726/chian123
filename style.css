@@ -1,66 +1,63 @@
+/* Đảm bảo tính toán kích thước bao gồm cả padding và border */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f1f1f1;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
 }
 
+/* Phần tiêu đề */
 .header {
-    text-align: center;
-    padding: 32px;
-    background: white;
+  text-align: center;
+  padding: 32px;
 }
 
-.header h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-/* Container cho các cột */
+/* Container chứa các cột */
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 8px;
+  display: flex;
+  flex-wrap: wrap; /* Cho phép các cột xuống dòng khi không đủ chỗ */
+  padding: 0 4px;
 }
 
-/* Tạo 4 cột bằng nhau (25% mỗi cột) */
+/* Cấu hình cho mỗi cột - Mặc định 4 cột trên màn hình máy tính (25%) */
 .column {
-    flex: 25%;
-    max-width: 25%;
-    padding: 8px;
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
 }
 
 .column img {
-    width: 100%;
-    height: auto;
-    vertical-align: middle;
-    /* Hiệu ứng trắng đen giống trong ảnh của bạn */
-    filter: grayscale(100%);
-    transition: 0.3s;
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  border-radius: 5px; /* Bo góc ảnh cho đẹp */
+  filter: grayscale(0); /* Mặc định ảnh có màu */
+  transition: 0.3s;
 }
 
-/* Khi di chuột vào ảnh sẽ hiện màu (tùy chọn) */
+/* Hiệu ứng khi di chuột vào ảnh */
 .column img:hover {
-    filter: grayscale(0%);
+  filter: grayscale(100%); /* Chuyển sang trắng đen khi hover (hoặc ngược lại) */
+  cursor: pointer;
 }
 
-/* --- Responsive --- */
+/* --- Responsive Layout --- */
 
-/* Màn hình máy tính bảng (dưới 800px): chia làm 2 cột */
+/* Màn hình máy tính bảng (Dưới 800px): Hiển thị 2 cột (50%) */
 @media screen and (max-width: 800px) {
-    .column {
-        flex: 50%;
-        max-width: 50%;
-    }
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
 }
 
-/* Màn hình điện thoại (dưới 600px): chia làm 1 cột (xếp chồng) */
+/* Màn hình điện thoại (Dưới 600px): Hiển thị 1 cột (100%) */
 @media screen and (max-width: 600px) {
-    .column {
-        flex: 100%;
-        max-width: 100%;
-    }
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
 }
