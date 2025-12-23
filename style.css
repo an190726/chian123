@@ -1,81 +1,23 @@
-/* Đảm bảo trình duyệt tính toán kích thước chuẩn bao gồm cả viền và khoảng cách */
-* {
-    box-sizing: border-box;
+/* Container chính (vùng màu xanh dương) */
+.day {
+    display: flex;             /* Kích hoạt Flexbox */
+    background-color: #1E90FF; /* Màu xanh DodgerBlue */
+    padding: 10px;             /* Khoảng cách đệm bên trong vùng xanh */
 }
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #ffffff; /* Nền trắng sạch sẽ */
+/* Các item con (các ô màu xám chứa thứ trong tuần) */
+.day > div {
+    background-color: #f1f1f1; /* Màu nền xám nhạt */
+    margin: 10px;              /* Khoảng cách giữa các ô */
+    padding: 20px;             /* Khoảng cách từ chữ đến viền ô */
+    font-size: 30px;           /* Kích thước chữ */
+    flex: 1;                   /* Giúp các ô có độ rộng bằng nhau */
+    text-align: center;        /* Căn giữa chữ */
+    font-family: Arial, sans-serif;
 }
 
-/* Phần tiêu đề */
-.header {
-    text-align: center;
-    padding: 32px;
-}
-
-.header h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-.header p {
-    color: #666;
-}
-
-/* Hàng chứa các cột ảnh */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
-}
-
-/* Cấu hình cột: Mặc định 4 cột trên màn hình máy tính (25%) */
-.column {
-    flex: 25%;
-    max-width: 25%;
-    padding: 0 4px;
-}
-
-.column img {
-    margin-top: 8px;
-    vertical-align: middle;
-    width: 100%;
-    
-    /* Hiệu ứng trắng đen như trong ảnh mẫu bạn gửi */
-    filter: grayscale(100%);
-    
-    /* Hiệu ứng chuyển cảnh mượt mà */
-    transition: 0.3s ease;
-    border-radius: 2px; /* Bo góc cực nhẹ cho tinh tế */
-}
-
-/* Hiệu ứng khi di chuột vào ảnh: hiện màu và nổi bật hơn */
-.column img:hover {
-    filter: grayscale(0%);
-    transform: scale(1.02); /* Phóng to nhẹ 2% */
-    cursor: pointer;
-}
-
-/* --- Responsive Layout (Tính phản hồi) --- */
-
-/* Màn hình máy tính bảng (Dưới 800px): Hiển thị 2 cột (50%) */
-@media screen and (max-width: 800px) {
-    .column {
-        flex: 50%;
-        max-width: 50%;
-    }
-}
-
-/* Màn hình điện thoại (Dưới 600px): Hiển thị 1 cột duy nhất (100%) */
-@media screen and (max-width: 600px) {
-    .column {
-        flex: 100%;
-        max-width: 100%;
-    }
-    
-    .header h1 {
-        font-size: 30px; /* Thu nhỏ chữ tiêu đề trên điện thoại */
-    }
+/* Định dạng đoạn văn bản bên dưới */
+p {
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
 }
